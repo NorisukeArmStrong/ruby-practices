@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 number = 0
-while number < 20
+20.times do
   number += 1
     case 
     when number % 3 == 0 && number % 5 == 0
