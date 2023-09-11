@@ -30,4 +30,3 @@ print "   " * first_day
     print "\n"
   end
 end
-puts "\n"
