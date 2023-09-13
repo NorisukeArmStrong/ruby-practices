@@ -26,7 +26,7 @@ print "   " * first_day_wday
 (1..last_day).each do |day|
   print day.to_s.rjust(2) + " "
   first_day_wday += 1
-  if first_day % 7 == 0 || last_day == day
+  if first_day_wday % 7 == 0 || last_day == day
     print "\n"
   end
 end
