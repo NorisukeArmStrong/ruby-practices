@@ -6,7 +6,6 @@ shots = []
 scores.each do |s|
   if s == 'X'
     shots << 10
-    shots << 0
   else
     shots << s.to_i
   end
@@ -19,6 +18,12 @@ end
 
 point = 0
 frames.each do |frame|
-  point += frame.sum
+  if frame[0] == 10
+    point += 30
+  elsif frame.sum == 10
+    point += frame[0] + 10
+  else
+    point += frame.sum
+  end
 end
 puts point
