@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
 shots = []
 ARGV[0].split(',').each do |score|
@@ -16,17 +17,21 @@ shots.each_slice(2) do |shot|
 end
 
 point = 0
+# binding.irb
 frames.each_with_index do |frame, i|
   if frame[0] == 10 && i < 9
     point += (frames[i] + frames[i + 1]).sum
-    if frames[i + 1][0] == 10 && i < 9
-      point += (frames[i + 2]).sum
-    else
-      point += 0
-    end
+    point += if frames[i + 1][0] == 10 && i < 9 && frames[i + 2][0] != 10
+               frames[i + 2].first
+             elsif frames[i + 1][0] == 10 && i < 9
+               (frames[i + 2]).sum
+             else
+               0
+             end
   elsif frame.sum == 10 && i < 9
     point += frames[i].sum + frames[i + 1].first
   else
     point += frame.sum
   end
 end
+puts point
