@@ -2,8 +2,8 @@
 # frozen_string_literal: true
 
 files = []
-def to_array(array)
+def generate_directry(files)
   Dir.glob("*").each do |file|
-  array << file
+  files << file
   end
 end
