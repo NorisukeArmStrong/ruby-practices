@@ -10,8 +10,8 @@ end
 directories = generate_directry
 
 def sorted_matrix(directories)
-  max_width = 3
-  columns = directories.size % max_width == 0 ? directories.size / max_width : directories.size / max_width + 1
+  max_columns = 3
+  columns = directories.size % max_columns == 0 ? directories.size / max_columns : directories.size / max_columns + 1
   matrix = []
   directories.each_slice(columns) do |directory|
     matrix << directory
