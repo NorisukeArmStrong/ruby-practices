@@ -1,13 +1,13 @@
 #! /usr/bin/env ruby
 # frozen_string_literal: true
 
-files = []
-def generate_directry(files)
+def generate_directry
+  files = []
   Dir.glob("*").each do |file|
   files << file
   end
 end
-directories = generate_directry(files)
+directories = generate_directry
 
 def sorted_matrix(directories)
   max_width = 3
